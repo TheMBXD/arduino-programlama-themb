@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="tr">
+<head>
+
+    <title>
+    Arduino Programlama Başlangıç
+ </title>
+ <link href="https://Arduino.Programlama.html">
+
+</head>
+<body>
+<div class="div1">
+<img  alt="Arduino UNO R3" class="Arduino" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTus4TB1N4aulDv2i6F7tC5dC0Z0eeipfU1CQ&s">
+<h1 class="heading1">
+<span>Arduino Programlama Başlangıç</span>
+</h1>
+<div>
+    <h2 class="heading2">
+       Hakkında: 
+    </h2>
+    <br><br><p>
+         Arduino UNO 32kb, Arduino Mega 256kb ve Nano ise 32kb veri yükleme hfızasına sahiptir.
+        UNO Versiyonu (Başlangıç için en uygunu) 14 Dijital Pin(RX,TX,4 Digital,6 PWM), 6 Analog Pin, 3 GND ve Power Pinleri içerir. bunların üstüne SCL 
+        (Serial Clock) ve SDA (Serial Data) içerir.
+        SDA veri iletişimi için kullanılır, SCL ise gönderen ve veri-alan senkronizasyonu sağlar. bu pinlerle (SCL,SDA) LCD I2C vb. şeylerle kolayca bağlantı
+        kurup kullanabilirsiniz. Aynı zamanda yeni başlayanlar için Arduino IDE yerine "mBlock" gibi blok yazılım dilleri kullanabilirsiniz. aynı zamanda
+        mBlock üzerinden sağ üstteki "Arduinoc" yazan butona tıklayarak Arduino IDE yazılımı yapmak da mümkündür. 3 Farklı versiyonu ve her versiyon için faklı
+        modeller vardır. Örneğin üstteki resimde bir "Arduino UNO R3" mikro-denetleyicisi görünmekte. Arduino olarak yeni başlayanlar için aşağıdaki Arduino UNO
+        modeli daha uygundur. Arduino'nun en küçük versiyonu Arduino NANO'dur. Yeni bşlayanlar için ise Arduino UNO vardır. En büyük versiyonu Arduino MEGA'dır. Arduino
+        MEGA yüksek syıda pin ve veri yükleme hafızasına sahiptir. Çok fazla işlevi aynı anda görebilir.
+        </p>
+        <img src="https://ideacdn.net/idea/cd/40/myassets/products/007/arduino-uno-2.jpg?revision=1718210082" class="Arduino">
+        <div class="Links">
+            <p>
+            <br><h3> 
+            mBlock 
+        </h3>
+        <br><br><a href="https://ide.mblock.cc">mBlock Onine Editor</a>
+        <br><a href="https://mblock.cc/pages/downloads">mBlock indir</a>
+        <br><h3>
+            Arduino IDE
+        </h3>
+        <br><a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE">Arduino IDE indir</a>
+    </p>
+        </div>
+</div>
+</div>
+<div class="div2">
+<h2>
+    Bölüm 1: Başlangıç
+</h2>
+<p> İlk başta Arduino yazılım programını indirmemiz gerek, indirdikten ve açtıktan sonra karşınıza eğer Arduino'da yeniyseniz sadece anlamsız yazılar çıkar, ama sonra anlarsınız. Bu size anlamsız gelen yazılar <b>void</b> kelimesi ile başlar. Basit olanları şöyledir:
+</p>
+<h3>
+    Kod Görseli
+</h3>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-SwGH7_sT0yrVGqzmcBOApM-WVAuq1XGerp_adbiDNTcQKAlcVjS07093&s=10" class="image2">
+<p>
+ Burada "void setup" kodu başlangıçta bir kere oynatılan koddur. "void loop" ise ana koddur ve sonsuza kadar gider.
+Bu kodların içine bir şey yazmak için {}'lerin içine yazarsınız.
+</p>
+</div>
+<div class="div3">
+<h2>
+Bölüm 2: Digital Pin
+</h2>
+<p>
+<img src="https://www.arduinomedia.com/wp-content/uploads/2018/12/arduino-dijital-pinler.jpg" class="image3">
+     <br>Dijital pinler Arduino'da<b> 14</b> tane bulunur(RX,TX, 6 PWM ve 4 Digital). Dijital pinler Arduino modüllerine<b> "YÜKSEK" </b> ve <b>"DÜŞÜK" </b>
+    güç verebilmemizi sağlar. <b>YÜKSEK</b> ifadesi aslında 5V gücünde enerji verir. Aynı zamanda dijital pinlerin Yüksek ve Düşük olarak güç okuma özelliği de bulunmaktadır.
+    <b>Delay</b> kodu ise koddan sonra gelen ()'lerin içine yazılan sayı kadar
+    milisaniye bekler.
+</p>
+<h3>
+    Kod Görseli
+</h3>
+<img src="https://blogkod.com/wp-content/uploads/2019/01/arduino-led-yak-kod-1.png" class="image4">
+<p>
+     Bu programın ismi göz kırpmaya benzediği için kısaca <b>LED Blink'dir.</b> Çünkü "Blink" kelimesi İngilizce'de "Göz Kırpmak" anlamıyla kullanılır.
+    Bu programda dijital pinlerin "YÜKSEK" ve "DÜŞÜK" enerji verebilme özelliğinden yararlanılmıştır. Buradaki kodlar şöyledir:
+    <div class="Code_Descriptions">
+    <br>
+    <br>// ile başlayan yazıları ben koydum.
+    <br>int LEDpini = (13); //13 numaralı dijital pine LEDpini ismini verdik.
+    <br>pinMode(LEDpini, OUTPUT); //LEDpini isimli dijital pinimizi dışarı elektrik verecek şekilde ayarladık.
+    <br>digitalWrite(LEDpini,HIGH); //LEDpini isimli dijital pinimizden elektrik (5V) verdik.
+    <br>delay(1000); //1000 milisaniye bekledik
+    <br>digitalWrite(LEDpini,LOW); //LEDpini isimli dijital pinimizin elektriğini (5V) kestik.
+    <br>delay(1000); //1000 milisaniye bekledik.
+    <br>
+    <br>NOT:kodların sonuna (;) koymazsanız kod çalışmaz.
+    <br>
+    <br>NOT2:13.dijital pini LED'in artı GND'yi ise LED' in eksi tarafına bağlayın. LED'in uzun tarafı artı, diğer tarafı eksidir.
+    <br>
+    <br>
+    </div>
+</p>
+
+</div>
+<div class="div4">
+<h2>
+    Bölüm 3: PWM Pin
+</h2>
+<p>
+    PWM (Pulse Width Modulation) pinler 0,255 aralığında sayı değeri kadar elektrik verebilen pinlerdir. LED Fading (Yavaş yavaş yanıp sönen LED) bu PWM pinlerle
+    yapılabilecek projelerden biridir. LED Fading projesi PWM pinlerin gücünü kısa (yaklaşık 100 milisaniye) ara bekleme süreleri kullanarak yavaş yavaş gücü arttırmaktır.
+    Arttırdıktan sonra ise aynı aralıkları kullanarak geri azaltmaktır. Bunu bir döngü içine alırsanız ise sonsuza kadar yavaş yavaş söner, yavaş yavaş açılır. Bunları yapmak
+    için digitalWrite kodu yerine analogWrite kodunu yazarız. Bir kod örneği:
+    <br>
+    <br>analogWrite(3,15) <b>//</b>Bu kodda 3 numaralı PWM pinden 15 gücünde elektrik çıkışı yaptık. PWM pinleri dijital pinlerin
+    aralarında yanında (~) işareti bulunan pinlerdir. Arduino'da 6 tane PWM, 6 tane Digital pin bulunur.
+    Arduino'ya mesafe sensörü de bağlanabilir, örneğin bir LED'i PWM pine bağlayıp birer mesafe sensörünü Arduino'ya
+    mBlock eklentilerinden gelen bilgiler ile Dijital Pinlerle bağlarız. Mesafe azaldıkça PWM pinden Sensöre'e yakınlık kadar PWM güç veririz. Bu şekilde bir 
+    "Mini Park sensörü" yapmış oluruz. (Ya da bu konuda bilgiliyseniz Arduino IDE yazılım programından da yapabilirsiniz.) Alttaki fotoğrafta 13 numaralı dijital pine bağlanmış 
+    LED'i saniyede bir yakıp saniyede bir söndüren bir Arduino kodu bulunmakta.
+</p>
+</div>
+<div class="div5">
+<h2>
+    Bölüm 4: Analog Pin
+</h2>
+<p>
+     Analog pinler 5,1024 sayı aralığında geniş bir voltaj okuma özelliğine sahiptir. Sensörlerin algıladığı zaman verdiği elektrik gücüne göre Arduino'ya veri gönderebilirsiniz.
+    Arduino'da da alınan veriye göre işlemler yapabilirsiniz. Örneğin konsol modulünün X eksenini analog pinlere bağlayıp analog pinlerden gelen elektrik gücüne göre PWM pinlerden
+    gittikçe çoğalan ve azalan bir LED kodu yapabilirsiniz. Yada bir Servo Motor ile sağa çevirdiğinizde sağa, sola çevirdiğinizde sola dönen bir motor yapabilirsiniz.Analog olarak
+    veri okumak için "analogRead( )" kodunu kullanırız. ( )'lerin içine <b>"A{*analog pinin numarası*}"</b> yazarız.
+</p>
+</div>
+<div class="Style_And_Script">
+<style>
+    .heading1{
+        text-align: center;
+    }
+    .heading2{
+        text-align: center;
+    }
+    .Links{
+        text-align: center;
+    }
+    .Arduino{
+        justify-content:center;
+        display: flex;
+        align-items: center;
+        width:335px;
+        height:250px;
+        padding: 0 0 0 500px;
+        border-radius: 12px;
+    }
+    .image2{
+        border-radius: 5px;
+        align-items: center;
+    }
+    .image3{
+        border-radius: 12px;
+        align-items: center;
+        display: flex;
+    }
+    .image4{
+        border-radius: 12px;
+        align-items: center;
+        padding:0 0 0 0;
+    }
+
+    .div1{
+        text-align: center;
+    }
+    body{
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: rgb(255,255,255);
+    }
+    .Code_Descriptions{
+        text-align: left;
+    }
+</style>
+<script>
+
+</script>
+</div>
+</body>
+</html>
